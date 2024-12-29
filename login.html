@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Comet</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        .button {
+            background-color: #000;
+            border: 2px solid #000;
+            color: white;
+            padding: 15px 32px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 255, 1.0);
+            background-color: #333;
+            transform: scale(1.1);
+        }
+
+        .button:active {
+            box-shadow: 0 0 30px rgba(255, 0, 255, 1.2);
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: #333;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Login to Comet</h2>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button class="button" onclick="login()">Login</button>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Hardcoded credentials check
+            if (username === 'sharky0' && password === '1517356') {
+                window.location.href = 'dash.html'; // Redirect to dashboard page after successful login
+            } else {
+                alert("Incorrect Username or Password.");
+            }
+        }
+    </script>
+
+</body>
+</html>
