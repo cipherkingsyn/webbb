@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comet Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .dashboard-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .code-bar {
+            background-color: #555;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            word-wrap: break-word;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+        }
+
+        .copy-button {
+            background-color: #000;
+            border: 2px solid #000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .copy-button:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 255, 1.0);
+            background-color: #333;
+            transform: scale(1.1);
+        }
+
+        .copy-button:active {
+            box-shadow: 0 0 30px rgba(255, 0, 255, 1.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <h2>Your GUI is Ready</h2>
+        <div class="code-bar" id="code-bar">
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/cipherkingsyn/comet-break/refs/heads/main/break.lua"))()
+        </div>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.getElementById('code-bar').innerText;
+            const textArea = document.createElement('textarea');
+            textArea.value = code;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy'); // Use the old copy method for wider compatibility
+            document.body.removeChild(textArea);
+            alert("Code copied to clipboard!");
+        }
+    </script>
+
+</body>
+</html>
