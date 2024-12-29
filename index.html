@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comet Access</title>
+    <style>
+        /* Basic page layout */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Button styling */
+        .button {
+            background-color: #000;
+            border: 2px solid #000;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 255, 1.0);
+            background-color: #333;
+            transform: scale(1.1);
+        }
+
+        .button:active {
+            box-shadow: 0 0 30px rgba(255, 0, 255, 1.2);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Access to Comet</h1>
+        <button class="button" onclick="goToLogin()">Get Comet (Server-Side)</button>
+    </div>
+
+    <script>
+        function goToLogin() {
+            window.location.href = 'login.html'; // Redirect to login page
+        }
+    </script>
+</body>
+</html>
